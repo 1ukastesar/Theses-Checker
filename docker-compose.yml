@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: theses-checker
+    expose: 
+      - 8000
+    image: theses-checker
+    restart: unless-stopped
+    volumes:
+      - ./:/app
