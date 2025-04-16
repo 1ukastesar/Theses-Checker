@@ -4,8 +4,14 @@ services:
     container_name: theses-checker
     expose: 
       - 8000
-    image: theses-checker
+    image: 1ukastesar/theses-checker
     restart: unless-stopped
+    user: '1000'
     volumes:
       - ./:/app
       - ./.env:/app/src/web/.env
+
+networks:
+  default:
+    name: npm-proxy
+    external: true
