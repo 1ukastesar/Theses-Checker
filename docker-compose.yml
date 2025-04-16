@@ -6,6 +6,12 @@ services:
       - 8000
     image: theses-checker
     restart: unless-stopped
+    user: '1000'
     volumes:
       - ./:/app
       - ./.env:/app/src/web/.env
+
+networks:
+  default:
+    name: npm-proxy
+    external: true
