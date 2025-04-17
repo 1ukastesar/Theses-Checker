@@ -10,11 +10,7 @@ RUN pip install --upgrade pip
 ADD requirements_web.txt .
 RUN pip install -r requirements_web.txt
 
-# Possibly redundant, make sure at least one copy is there
-# either by this COPY, or bind mounted repo from host
-COPY . .
-VOLUME /app
-EXPOSE 8000
+COPY src src
 
 EXPOSE 8000
 CMD ["python", "src/web/manage.py", "runserver", "0.0.0.0:8000"]
