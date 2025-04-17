@@ -13,6 +13,7 @@
 #    in "files/json/" folder that are older than Period.
 # ---------------------------------------------------------------------------
 
+cd "$(dirname "$0")"
 
 TWO_HOURS_IN_SEC=7200
 TWELVE_HOURS_IN_SEC=43200
