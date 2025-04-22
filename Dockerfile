@@ -13,4 +13,4 @@ RUN pip install -r requirements_web.txt
 COPY src src
 
 EXPOSE 8000
-CMD ["python", "src/web/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["/app/src/prerun/prerun.bash"]
