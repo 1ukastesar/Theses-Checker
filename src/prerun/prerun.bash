@@ -13,7 +13,17 @@ OPERATING_SYSTEM=Linux
 STATIC_URL=static/
 EOF
 
+CRON_LINE="*/5 * * * * cd /app/src/web/ && bash periodicDeleteFiles.sh >> /var/log/cron.log 2>&1"
+echo "$CRON_LINE" > /etc/cron.d/periodic-delete
+# Set the correct permissions
+chmod 0644 /etc/cron.d/periodic-delete
+
+# Register the cron job
+crontab /etc/cron.d/periodic-delete
+
 echo ".env file created at ../web/.env"
 cat ../web/.env
+echo "starting cron"
+service cron start
 echo "starting server"
 python src/web/manage.py runserver 0.0.0.0:8000
