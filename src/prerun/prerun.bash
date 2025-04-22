@@ -5,6 +5,7 @@ SECRET_KEY=$(python3 -c "import secrets; import string; print(''.join(secrets.ch
 
 # set default if unset
 ALLOWED_HOSTS="${ALLOWED_HOSTS:-127.0.0.1, .localhost}"
+CSRF_TRUSTED_ORIGINS="${CSRF_TRUSTED_ORIGINS:-http://127.0.0.1, https://*.localhost}"
 PORT="${PORT:-8000}"
 
 # Write to ../web/.env
@@ -13,6 +14,7 @@ cat > /app/src/web/.env <<EOF
 SECRET_KEY=$SECRET_KEY
 DEBUG=True
 ALLOWED_HOSTS=$ALLOWED_HOSTS
+CSRF_TRUSTED_ORIGINS=$CSRF_TRUSTED_ORIGINS
 OPERATING_SYSTEM=Linux
 STATIC_URL=static/
 EOF
