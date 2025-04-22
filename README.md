@@ -183,7 +183,10 @@ docker run -d --name thesis-checker --restart=unless-stopped -p 8000:8000 ghcr.i
 ```
 then you can use it on url [localhost:8000](http://localhost:8000), [127.0.0.1:8000](http://127.0.0.1:8000) or [0.0.0.0:8000](http://0.0.0.0:8000).
 
-If you wish to use different hostname:
+If you wish to use different hostname and port:
+```bash
+docker run -d --name thesis-checker --restart=unless-stopped  -p <port>:<port>  -e ALLOWED_HOSTS="example.com" -e PORT="<port>" ghcr.io/viotaljiplk/thesis-checker:autobuild
+```
 
 ### Web tool
 
