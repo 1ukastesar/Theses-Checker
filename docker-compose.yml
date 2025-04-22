@@ -10,6 +10,9 @@ services:
     image: 1ukastesar/theses-checker
     restart: unless-stopped
     # user: '1000'
+    environment:
+      ALLOWED_HOSTS: "127.0.0.1"
+      
 
 # networks:
 #   default:

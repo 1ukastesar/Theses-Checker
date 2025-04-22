@@ -3,12 +3,15 @@
 # Generate a Django secret key
 SECRET_KEY=$(python3 -c "import secrets; import string; print(''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(50)))")
 
+# set default if unset
+ALLOWED_HOSTS="${ALLOWED_HOSTS:-127.0.0.1, .localhost}"
+
 # Write to ../web/.env
 
 cat > /app/src/web/.env <<EOF
 SECRET_KEY=$SECRET_KEY
 DEBUG=True
-ALLOWED_HOSTS=127.0.0.1, .localhost, 0.0.0.0
+ALLOWED_HOSTS=$ALLOWED_HOSTS
 OPERATING_SYSTEM=Linux
 STATIC_URL=static/
 EOF
