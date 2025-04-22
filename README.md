@@ -175,6 +175,16 @@ OPERATING_SYSTEM=Windows
 ---
 ## 3. Usage
 
+### Web tool in docker container
+
+If you have docker installed you can simply use:
+```bash
+docker run -d --name thesis-checker --restart=unless-stopped -p 8000:8000 ghcr.io/viotaljiplk/thesis-checker:autobuild
+```
+then you can use it on url [localhost:8000](http://localhost:8000), [127.0.0.1:8000](http://127.0.0.1:8000) or [0.0.0.0:8000](http://0.0.0.0:8000).
+
+If you wish to use different hostname:
+
 ### Web tool
 
 To start the server locally for the web tool, use this command (used primarily for debugging purposes):

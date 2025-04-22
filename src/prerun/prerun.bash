@@ -5,6 +5,7 @@ SECRET_KEY=$(python3 -c "import secrets; import string; print(''.join(secrets.ch
 
 # set default if unset
 ALLOWED_HOSTS="${ALLOWED_HOSTS:-127.0.0.1, .localhost}"
+PORT="${PORT:-8000}"
 
 # Write to ../web/.env
 
@@ -29,4 +30,4 @@ cat ../web/.env
 echo "starting cron"
 service cron start
 echo "starting server"
-python src/web/manage.py runserver 0.0.0.0:8000
+python src/web/manage.py runserver 0.0.0.0:$PORT
