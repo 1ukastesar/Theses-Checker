@@ -179,13 +179,13 @@ OPERATING_SYSTEM=Windows
 
 If you have docker installed you can simply use:
 ```bash
-docker run -d --name thesis-checker --restart=unless-stopped -p 8000:8000 ghcr.io/viotaljiplk/thesis-checker:autobuild
+docker run -d --name theses-checker --restart=unless-stopped -p 8000:8000 ghcr.io/viotaljiplk/thesis-checker:autobuild
 ```
 then you can use it on url [localhost:8000](http://localhost:8000), [127.0.0.1:8000](http://127.0.0.1:8000) or [0.0.0.0:8000](http://0.0.0.0:8000).
 
 If you wish to use different hostname and port:
 ```bash
-docker run -d --name thesis-checker --restart=unless-stopped  -p <port>:<port>  -e ALLOWED_HOSTS="example.com" -e CSRF_TRUSTED_ORIGINS="example.com" -e PORT="<port>" ghcr.io/viotaljiplk/thesis-checker:autobuild
+docker run -d --name theses-checker --restart=unless-stopped  -p <port>:<port>  -e ALLOWED_HOSTS="example.com" -e CSRF_TRUSTED_ORIGINS="http://example.com" -e PORT="<port>" ghcr.io/viotaljiplk/thesis-checker:autobuild
 ```
 
 ### Web tool

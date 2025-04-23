@@ -5,7 +5,7 @@ on:
     branches: [ "autobuild" ]
 
 env:
-  IMAGE_NAME: Thesis-Checker
+  IMAGE_NAME: Theses-Checker
 
 jobs:
 
