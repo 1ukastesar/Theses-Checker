@@ -31,3 +31,4 @@ src/cmd/delete_theses_checker_package.ps1
 src/cmd/theses_checker_package/*.py
 !src/cmd/theses_checker_package/__init__.py
 .env
+.venv
