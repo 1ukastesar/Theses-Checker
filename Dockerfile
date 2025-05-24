@@ -22,4 +22,4 @@ RUN rm -rf static && ln -s staticfiles static
 
 EXPOSE 8000
 
-CMD ["uwsgi", "--module", "web.wsgi:application", "--max-requests", "10", "--processes", "4", "--http", "0.0.0.0:8000", "--static-map", "/static=staticfiles"]
+CMD ["uwsgi", "--module", "web.wsgi:application", "--max-requests", "10", "--processes", "4", "--http", "0.0.0.0:8000"]
