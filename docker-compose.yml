@@ -9,12 +9,13 @@ services:
     user: '1000'
     volumes:
       - ./:/app
+      - ./src/web/staticfiles:/app/src/web/static
       - ./.env:/app/src/web/.env
   static:
     image: nginx
     container_name: theses-checker-static
     volumes:
-      - ./src/web/static:/usr/share/nginx/html:ro
+      - ./src/web/staticfiles:/usr/share/nginx/html:ro
     restart: unless-stopped
 
 networks:
